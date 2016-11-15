@@ -1,0 +1,15 @@
+{
+  "name": "node_express",
+  "version": "1.0.0",
+  "description": "GitHub user search built with node and express",
+  "main": "node_express.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.5.2",
+    "express": "^4.14.0"
+  }
+}

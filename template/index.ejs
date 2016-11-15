@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>GitHub User Search</title>
+		<h1><italic>Find GitHub users fast and easy!</italic></h1>
+		<link rel="stylesheet" type="text/css" href="css/styles.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	</head>
+	
+	<body background="css/images/blue_flame.jpg" id="pageBod">
+		<div class="searchBar">
+			<input type="text" name="search" placeholder="Search GitHub Users..." id="inputField">
+		</div>
+		<div class="searchButton">
+			<button class="search" id="searchBtn">Go!</button>
+		</div>
+		
+		<script>
+			$(function(){
+				
+				
+				$("#searchBtn").click(function(){
+					var input = $("#inputField").val();
+					$.ajax({url: "https://api.github.com/users/"+input, success: function(data){
+							$("#pageBod").append('<div><img src="' + data.avatar_url + '">Username: ' + data.login + '<br>Name: ' + data.name + '<br>Repos: ' + data.public_repos + '<br>Followers: ' + data.followers + '</div>');
+						}
+					});
+				});
+			});
+		</script>
+	</body>
+</html>
